@@ -5,7 +5,7 @@ let bassDistortion = 0.0;
 let organDistortion = 0.0;
 let violinDistortion = 0.0;
 
-
+let bpmValue = 120;
 
 function sequencer() {
     // Tone.Player() is like a query selector for sound files
@@ -19,7 +19,7 @@ function sequencer() {
     const audioContext = new AudioContext();
     
     const audioCtx = new AudioContext();
-        const audio = new Audio('./drums/kick-electro01.wav');
+        const audio = new Audio('./drums/snare-electro.wav');
         
     const source = audioCtx.createMediaElementSource(audio);
   source.connect(audioCtx.destination);
@@ -78,9 +78,27 @@ function sequencer() {
     // of musical events 
     // this means we want the function 'repeat' to repeat
     // after every 8 notes 
-    Tone.Transport.scheduleRepeat(repeat, '8n');
+  Tone.Transport.scheduleRepeat(repeat, '8n');
+
     Tone.Transport.start();
   function repeat() {
+
+
+    const tempoSetter = document.querySelector('#tempo');
+    const errorMessage = document.querySelector('#error-message');
+    tempoSetter.addEventListener('input', function () {
+      console.log(typeof this.value)
+      if (Number.isInteger(parseInt(this.value))) {
+        errorMessage.innerText = ''
+        bpmValue = this.value;
+        console.log(this.value);
+        Tone.Transport.bpm.value = bpmValue;
+      }
+      else {
+        errorMessage.innerText = 'Input a number!'
+      }
+}, false);
+    console.log(bpmValue);
       // step goes from 0-7 repeatedly 
       let step = index % 8;
       // console.log(index, step);
@@ -108,9 +126,25 @@ function sequencer() {
     pannerControl.addEventListener('input', function() {
         stereoPannerNode.pan.value = this.value;
     }, false);
-    // const pannerOptions = { pan: 1 };
-    // const panner = new StereoPannerNode(audioCtx, pannerOptions);
-    // stereoPannerNode.pan.value = -1;
+    // REVERB
+    
+//     var distortion = audioCtx.createWaveShaper();
+//     function makeDistortionCurve(amount) {
+//       var k = typeof amount === 'number' ? amount : 50,
+//         n_samples = 44100,
+//         curve = new Float32Array(n_samples),
+//         deg = Math.PI / 180,
+//         i = 0,
+//         x;
+//       for ( ; i < n_samples; ++i ) {
+//         x = i * 2 / n_samples - 1;
+//         curve[i] = ( 3 + k ) * x * 20 * deg / ( Math.PI + k * Math.abs(x) );
+//       }
+//       return curve;
+//     };
+//     distortion.curve = makeDistortionCurve(400);
+// distortion.oversample = '4x';
+    
     source.connect(gainNode).connect(stereoPannerNode).destination;
     
 // WEB AUDIO 

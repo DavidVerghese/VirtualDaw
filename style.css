@@ -1,0 +1,76 @@
+body {
+  font-size: 30px;
+  text-align: center;
+  background-color: #fefcfc;
+}
+button {
+  background-color: #662434;
+  color: white;
+}
+h1 {
+  color: #79223a;
+  background-color: #1e1d22;
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+}
+.music-div  {
+  height: 400px;
+  margin: 0 auto;
+  width: 800px;
+}
+.instrument-title {
+  background-color: #1a191e;
+  width: 400px;
+  margin: 0 auto;
+}
+.instrument-title-parent-div {
+  background-color: #d8793c;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  width: 800px;
+  color: #debeb0;
+}
+
+.music-div input {
+  height: 40px;
+  margin: 0px 30px 0px 30px;
+}
+
+.kick-parent-div, .snare-parent-div, .hihat-parent-div {
+  background-color:#1e1d22;
+  margin-top: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+}
+.kick-parent-div p, .snare-parent-div p, .hihat-parent-div p, .bass-parent-div p {
+  margin-left: 20px;
+}
+.bass-parent-div {
+  background-color: #1e1d22;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #9e9ce3;
+  display: flex;
+  justify-content: flex-start;
+}
+.orange-text {
+  color: #ef9653;
+}
+.green-text {
+  color: #ddea89;
+}
+.magenta-text {
+  color: #949fde;
+}
+.red-text {
+  color: #ff2328;
+}
+.teal-text {
+  color: #21f0b6;
+}
+

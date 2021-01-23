@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href = "./style.css">
+  <title>Music Note Grid!</title>
+</head>
+<body>
+  <h1>Music Maker</h1>
+  <button id="startbutton">Start</button>
+  <button id="stopbutton">Stop</button>
+  <p id="beat-count">Beat count: 0</p>
+  <div class="instrument-title-parent-div">
+  <p class="instrument-title">Drums</p>
+  <p>Volume</p>
+  <input type="range" id="volume" min="0" max="2" value="1" step="0.01">
+  <p>Panning:</p>
+  <input type="range" id="panner" min="-1" max="1" value="0" step="0.01">
+  <button id="drum-distortion">Distortion</button>
+</div>
+  <div class="music-div">
+    <div class="kick-parent-div">
+      <p class="orange-text">Kick:</p>
+    <div class="kick">
+      <input type="checkbox" id="kick1">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="snare-parent-div">
+    <p class="green-text">Snare:</p>
+    <div class="snare">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="magenta-text">Hihat:</p>
+    <div class="hihat">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="teal-text">Low tom:</p>
+    <div class="low-tom">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="orange-text">Mid tom:</p>
+    <div class="mid-tom">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="green-text">High tom:</p>
+    <div class="high-tom">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="magenta-text">Ride cymbal:</p>
+    <div class="ride-cymbal">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="red-text">Crash cymbal:</p>
+    <div class="crash-cymbal">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="instrument-title-parent-div">
+  <p class="instrument-title">Bass:</p>
+  <button id="bass-distortion">Distortion</button>
+</div>
+  <div class="bass-parent-div">
+    <p class="orange-text">Bass (C):</p>
+    <div class="bass-high-c">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="green-text">Bass (B):</p>
+    <div class="bass-b1">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="magenta-text">Bass (A)</p>
+    <div class="bass-a1">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="teal-text">Bass (G):</p>
+    <div class="bass-g1">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="orange-text">Bass (F):</p>
+    <div class="bass-f1">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="green-text">Bass (E):</p>
+    <div class="bass-e1">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="magenta-text">Bass (D):</p>
+    <div class="bass-d1">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="red-text">Bass (C):</p>
+    <div class="bass-c1">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="instrument-title-parent-div">
+  <p class="instrument-title">Organ:</p>
+  <button id="organ-distortion">Distortion</button>
+</div>
+  <div class="hihat-parent-div">
+    <p class="orange-text">Organ (C):</p>
+    <div class="organ-c5">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="green-text">Organ (B):</p>
+    <div class="organ-b4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="magenta-text">Organ (A)</p>
+    <div class="organ-a4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="teal-text">Organ (G):</p>
+    <div class="organ-g4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="orange-text">Organ (F):</p>
+    <div class="organ-f4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="green-text">Organ (E):</p>
+    <div class="organ-e4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="magenta-text">Organ (D):</p>
+    <div class="organ-d4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="red-text">Organ (C):</p>
+    <div class="organ-c4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="instrument-title-parent-div">
+  <p class="instrument-title">Violin:</p>
+  <button id="violin-distortion">Distortion</button>
+</div>
+  <div class="hihat-parent-div">
+    <p class="orange-text">Violin (C):</p>
+    <div class="violin-c5">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="green-text">Violin (B):</p>
+    <div class="violin-b4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="magenta-text">Violin (A):</p>
+    <div class="violin-a4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="teal-text">Violin (G):</p>
+    <div class="violin-g4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="orange-text">Violin (F):</p>
+    <div class="violin-f4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="green-text">Violin (E):</p>
+    <div class="violin-e4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="magenta-text">Violin (D):</p>
+    <div class="violin-d4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <div class="hihat-parent-div">
+    <p class="red-text">Violin (C):</p>
+    <div class="violin-c4">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+</div>
+
+  
+  
+  <!-- Here we are installing the Tone js library. 
+    We are using a minifed version of Tone js 
+    Minification is the process of removing all unnecessary 
+    characters from the source code of interpreted programming languages 
+    or markup languages without changing its functionality. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.3.9/Tone.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -73,4 +73,7 @@ h1 {
 .teal-text {
   color: #21f0b6;
 }
-
+#error-message {
+  color:red;
+  font-size: 70%;
+}

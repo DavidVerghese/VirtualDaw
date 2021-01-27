@@ -4,8 +4,9 @@ let drumDistortionOn = false;
 let bassDistortion = 0.0;
 let organDistortion = 0.0;
 let violinDistortion = 0.0;
-
 let bpmValue = 120;
+let masterVolume = 1;
+
 
 function sequencer() {
     // Tone.Player() is like a query selector for sound files
@@ -19,7 +20,7 @@ function sequencer() {
     const audioContext = new AudioContext();
     
     const audioCtx = new AudioContext();
-        const audio = new Audio('./drums/snare-electro.wav');
+        const audio = new Audio('./drums/kick-electro01.wav');
         
     const source = audioCtx.createMediaElementSource(audio);
   source.connect(audioCtx.destination);
@@ -80,7 +81,8 @@ function sequencer() {
     // after every 8 notes 
   Tone.Transport.scheduleRepeat(repeat, '8n');
 
-    Tone.Transport.start();
+  Tone.Transport.start();
+      
   function repeat() {
 
 
@@ -88,17 +90,19 @@ function sequencer() {
     const errorMessage = document.querySelector('#error-message');
     tempoSetter.addEventListener('input', function () {
       console.log(typeof this.value)
-      if (Number.isInteger(parseInt(this.value))) {
+      if (Number.isInteger(parseInt(this.value)) && parseInt(this.value) < 1000) {
         errorMessage.innerText = ''
         bpmValue = this.value;
         console.log(this.value);
         Tone.Transport.bpm.value = bpmValue;
       }
+      else if (Number.isInteger(parseInt(this.value)) && parseInt(this.value) >= 1000) {
+        errorMessage.innerText = 'Input a smaller number'
+      }
       else {
         errorMessage.innerText = 'Input a number!'
       }
-}, false);
-    console.log(bpmValue);
+    }, false);
       // step goes from 0-7 repeatedly 
       let step = index % 8;
       // console.log(index, step);
@@ -110,13 +114,26 @@ function sequencer() {
     
     
     // WEB AUDIO 
+    // MASTER VOLUME 
+    const masterVolumeControl = document.querySelector('#master-volume');
+    // gainNode.gain.value = -1;
+    masterVolumeControl.addEventListener('input', function() {
+        masterVolume = this.value;
+        console.log(this.value);
+      }, false);
+
+    // MUTE 
+
+    document.querySelector("#drum-mute").addEventListener("click", function (e) { e.preventDefault(); masterVolume = 0 });
 
 
     //VOLUME
     const gainNode = audioCtx.createGain();
     const volumeControl = document.querySelector('#volume');
+    // gainNode.gain.value = -1;
       volumeControl.addEventListener('input', function() {
-          gainNode.gain.value = this.value;
+        gainNode.gain.value = masterVolume * this.value;
+        console.log(masterVolume * this.value);
       }, false);
 
     //PANNER

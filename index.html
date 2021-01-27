@@ -8,12 +8,15 @@
 </head>
 <body>
   <h1>Music Maker</h1>
+  <p>Master Volume:</p>
+  <input type="range" id="master-volume" min="0" max="1" value="1" step="0.01">
+  <p>Controls</p>
   <button id="startbutton">Start</button>
   <button id="stopbutton">Stop</button>
   <p id="beat-count">Beat count: 0</p>
   <p>Tempo:</p>
   <p id="error-message"></p>
-  <input type="text" id="tempo">
+  <input type="text" id="tempo" placeholder="Default: 120bpm">
   <div class="instrument-title-parent-div">
   <p class="instrument-title">Drums</p>
   <p>Volume</p>
@@ -21,6 +24,7 @@
   <p>Panning:</p>
   <input type="range" id="panner" min="-1" max="1" value="0" step="0.01">
   <button id="drum-distortion">Distortion</button>
+  <button id="drum-mute">Mute</button>
 </div>
   <div class="music-div">
     <div class="kick-parent-div">
